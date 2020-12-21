@@ -11,7 +11,9 @@ phases:
 
   build:
     commands:
-      - ls -lrt   && terraform init && terraform plan  
+      - ls -lrt   
+      - terraform init 
+      - terraform plan  
 
   post_build:
     commands:
