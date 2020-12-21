@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+ 
+  pre_build:
+    commands:
+      - ls
+      - cd "$CODEBUILD_SRC_DIR"
+      
+
+  build:
+    commands:
+      - ls -lrt     
+
+  post_build:
+    commands:
+      - echo terraform plan completed on `date`
