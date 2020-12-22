@@ -1,5 +1,10 @@
 
 version: 0.2
+env:
+  secrets-manager:
+    AWS_ACCESS_KEY_ID: "devopskeys:AWS_ACCESS_KEY_ID"
+    AWS_SECRET_ACCESS_KEY: "devopskeys:AWS_SECRET_ACCESS_KEY"
+    AWS_DEFAULT_REGION: "devopskeys:AWS_DEFAULT_REGION"
 
 phases:
  
@@ -9,7 +14,7 @@ phases:
       - cd "$CODEBUILD_SRC_DIR"
       - echo $Name
       - echo $secretskeys
-      - echo $secretskeys.AWS_ACCESS_KEY_ID
+      - echo $AWS_ACCESS_KEY_ID
       
 
   build:
