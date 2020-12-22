@@ -19,6 +19,7 @@ phases:
 
   build:
     commands:
+      -  aws sts get-caller-identity 
       - ls -lrt   
       - terraform init 
       - terraform plan  
@@ -26,12 +27,13 @@ phases:
       #-  export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
       #-  export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
       - aws sts get-caller-identity
-      - mkdir ~/.aws
-      - echo "[devops]\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY" > ~/.aws/credentials
-      - echo "[profile devops]\nregion=$AWS_DEFAULT_REGION\noutput=json" > ~/.aws/config
-      - aws sts get-caller-identity
-      - aws sts get-caller-identity --profile devops
-      - aws s3 ls --profile devops
+      #- mkdir ~/.aws
+      #- echo "[devops]\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY" > ~/.aws/credentials
+      #- echo "[profile devops]\nregion=$AWS_DEFAULT_REGION\noutput=json" > ~/.aws/config
+      #- aws sts get-caller-identity
+      #- aws sts get-caller-identity --profile devops
+      #- aws s3 ls --profile devops
+      - aws s3 ls
   post_build:
     commands:
       - echo terraform plan completed on `date`
