@@ -35,12 +35,12 @@ RUN curl -O https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraf
     mv docker/docker /usr/local/bin && \
     rm -rf docker-${DOCKER_VERSION}.tgz docker/ && \
     docker -v && \
-   curl -O -L https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 && \
+    curl -O -L https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 && \
     mv jq-linux64 /usr/local/bin/jq && \
     chmod a+x /usr/local/bin/jq && \
     jq --version && \
     curl -O https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip  && \
-    unzip awscli-exe-linux-x86_64.zip && rm -rf awscli-exe-linux-x86_64.zip \
+    unzip awscli-exe-linux-x86_64.zip && rm -rf awscli-exe-linux-x86_64.zip && \
     ./aws/install && \
     aws --version  && \
     curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/${IAM_AUTHENTICATOR}/2020-04-16/bin/linux/amd64/aws-iam-authenticator && \
