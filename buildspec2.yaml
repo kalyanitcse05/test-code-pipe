@@ -13,7 +13,6 @@ phases:
       - ls
       - cd "$CODEBUILD_SRC_DIR"
       - echo $Name
-      - echo $secretskeys
       - echo $AWS_ACCESS_KEY_ID
       
 
